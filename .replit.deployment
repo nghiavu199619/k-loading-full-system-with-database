@@ -1,0 +1,8 @@
+# Deployment configuration
+# This file helps configure build settings for Replit deployment
+
+# Build commands that externalize drizzle-orm dependencies
+build = "vite build --config vite.build.config.ts && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist --external:drizzle-orm --external:drizzle-orm/pg-core --external:drizzle-zod --external:drizzle-kit --external:pg --external:postgres"
+
+# Runtime dependencies that should not be bundled
+external_deps = ["drizzle-orm", "drizzle-orm/pg-core", "drizzle-zod", "drizzle-kit", "pg", "postgres"]
